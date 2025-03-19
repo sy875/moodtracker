@@ -39,7 +39,7 @@ export const generateCalendarGrid = (currentDate: Date): CalendarData[] | [] => 
         for (let i = 1; i <= daysInMonth; i++) {
             const monthformat = month > 10 ? `${month + 1}` : `0${month + 1}`
             const dayformat = i > 10 ? `${i}` : `0${i}`
-            console.log(`${year}-${monthformat}-${dayformat}`)
+            // console.log(`${year}-${monthformat}-${dayformat}`)
             days.push({ date: i, emojiNumber: parsedEmojiList && parsedEmojiList[`${year}-${monthformat}-${dayformat}`] });
         }
 

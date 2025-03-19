@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction} from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { emojiList } from '../constants/emojiList';
 import { monthNames } from '../constants/calender';
 import { CalendarData } from '../App';
@@ -31,13 +31,13 @@ const Calendar: React.FC<CalendarProps> = ({ currentDate, setCurrentDate, calend
                 <div className="flex space-x-2">
                     <button
                         onClick={handlePrevMonth}
-                        className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                        className="px-4 py-1 bg-blue-500 rounded-sm text-white hover:scale-110 cursor-pointer"
                     >
                         prev
                     </button>
                     <button
                         onClick={handleNextMonth}
-                        className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                        className="px-4 py-1 bg-blue-500 rounded-sm text-white hover:scale-110 cursor-pointer"
                     >
                         next
                     </button>

@@ -5,6 +5,7 @@ import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
 import SetMood from "./components/SetMood"
 import { generateCalendarGrid } from "./utils/calendar"
+import toast from "react-hot-toast"
 
 export type CalendarData = {
   date: number,
@@ -25,7 +26,7 @@ function App() {
 
   //function to set mood according to list of emoji based on their index
   const setUserMoodInLocalStorage = (emojiNumber: number) => {
-    console.log("emoji number is ", emojiNumber)
+    // console.log("emoji number is ", emojiNumber)
     const findAlreadySaved = localStorage.getItem("mtracker");
 
     try {
@@ -37,6 +38,7 @@ function App() {
         const newMTrackerObj = { [date]: emojiNumber }
         localStorage.setItem(`mtracker`, JSON.stringify({ ...parsed, ...newMTrackerObj }));
         setCalendarData(generateCalendarGrid(currentDate))
+        toast.success("Successfully update mood for today")
       } else {
 
         //creating new obj
@@ -44,20 +46,22 @@ function App() {
         const newMTrackerObj = { [date]: emojiNumber }
         localStorage.setItem(`mtracker`, JSON.stringify({ ...newMTrackerObj }));
         setCalendarData(generateCalendarGrid(currentDate))
+        toast.success("Successfully updated mood for today")
       }
     } catch (error) {
-      console.log("error occured while saving mood", error)
+      // console.log("error occured while saving mood", error)
+      toast.error("failed update mood for today")
     }
   }
 
   return (
     <>
-      <main className="relative">
+      <main className="relative ">
         <Navbar />
         <Hero />
         <SetMood setUserMoodInLocalStorage={setUserMoodInLocalStorage} />
         <Calendar currentDate={currentDate} setCurrentDate={setCurrentDate} calendarData={calendarData} />
-        <Footer />
+        {/* <Footer/> */}
       </main>
     </>
   )
