@@ -1,3 +1,13 @@
+#Moode tracking website
+This webiste store data in localstorage and user can not store duplicate mood data in localstorage
+#how to start
+1.npm install
+2.npm run dev
+#website pictures
+![image](https://github.com/user-attachments/assets/dba4148d-fc2d-4b33-b86d-8336aa81c682)
+
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
