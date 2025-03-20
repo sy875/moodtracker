@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import Calendar from "./components/Calendar"
-import Footer from "./components/Footer"
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
 import SetMood from "./components/SetMood"
@@ -61,7 +60,6 @@ function App() {
         <Hero />
         <SetMood setUserMoodInLocalStorage={setUserMoodInLocalStorage} />
         <Calendar currentDate={currentDate} setCurrentDate={setCurrentDate} calendarData={calendarData} />
-        {/* <Footer/> */}
       </main>
     </>
   )
